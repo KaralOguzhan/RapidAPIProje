@@ -1,0 +1,13 @@
+﻿@model WeatherViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container">
+    <p>Şehir : @Model.location.city</p>
+    <p>Ülke : @Model.location.country</p>
+    <p>Zaman Dilimi : @Model.location.timezone_id</p>
+    <p>Enlem : @Model.location.lat</p>
+    <p>Hava Durumu : @Model.current_observation.condition.temperature</p>
+</div>

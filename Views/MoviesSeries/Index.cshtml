@@ -1,0 +1,27 @@
+﻿@model List<SeriesViewModel>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+	<h2>IMDB TOP 100 DİZİ</h2>
+	<table class="table table-hover">
+		<tr>
+			<th>#</th>
+			<th>Dizi Adı</th>
+			<th>Dizi Puanı</th>
+			<th>Detayları</th>
+		</tr>
+		@foreach(var item in Model)
+		{
+			<tr>
+				<td>@item.rank</td>
+				<td>@item.title</td>
+				<td>@item.rating</td>
+				<td><a href="@item.imdb_link" class="btn btn-warning" target="_blank">Detaylar</a></td>
+				
+			</tr>
+		}
+	</table>
+</div>

@@ -1,0 +1,30 @@
+﻿@model List<ExchangeViewModel.Exchange_Rates>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <td>Döviz</td>
+            <td>Kur</td>
+        </tr>
+        <tr>
+        @foreach(var item in Model)
+        {
+           
+            if (item.currency=="TRY")
+            {
+                
+				<td>@item.currency</td>
+				<td>@item.exchange_rate_buy</td>
+				}
+
+			}
+            
+		</tr>
+    </table>
+</div>
